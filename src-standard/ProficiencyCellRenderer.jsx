@@ -6,20 +6,20 @@ import RefData from './RefData';
 // html as a normal ag-Grid cellRenderer.
 export default class ProficiencyCellRenderer extends React.Component {
 
-    render() {
-        var backgroundColor;
-        if (this.props.value < 20) {
-            backgroundColor = 'red';
-        } else if (this.props.value < 60) {
-            backgroundColor = '#ff9900';
-        } else {
-            backgroundColor = '#00A000';
-        }
-
-        return (
-            <div className="div-percent-bar" style={{ width: this.props.value + '%', backgroundColor: backgroundColor }}>
-                <div className="div-percent-value">{this.props.value}%</div>
-            </div>
-        );
+  render() {
+    var backgroundColor;
+    if (this.props.value < 20) {
+      backgroundColor = 'red';
+    } else if (this.props.value < 60) {
+      backgroundColor = '#ff9900';
+    } else {
+      backgroundColor = '#00A000';
     }
+
+    return (
+      <div className="div-percent-bar" style={{ width: this.props.value + '%', backgroundColor: backgroundColor }}>
+        <div className="div-percent-value">{this.props.value}%</div>
+      </div>
+    );
+  }
 }

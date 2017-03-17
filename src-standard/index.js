@@ -10,9 +10,9 @@ import 'ag-grid-root/dist/styles/theme-fresh.css';
 // waiting for dom to load before booting react. we could alternatively
 // put the index.js reference at the end fo the index.html, but i prefer this way.
 document.addEventListener('DOMContentLoaded', ()=> {
-    var container = document.getElementById('myAppContainer');
-    ReactDOM.render(
-        React.createElement(MyApp),
-        container
-    );
+  var container = document.getElementById('myAppContainer');
+  ReactDOM.render(
+    React.createElement(MyApp),
+    container
+  );
 });

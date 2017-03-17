@@ -17,7 +17,7 @@ export default class MyApp extends React.Component {
     this.state = {
       quickFilterText: null,
       showGrid: true,
-      showToolPanel: false,
+      showToolPanel: true,
       columnDefs: new ColDefFactory().createColDefs(),
       rowData: new RowDataFactory().createRowData(),
       icons: {
@@ -63,7 +63,7 @@ export default class MyApp extends React.Component {
   }
 
   onToggleToolPanel(event) {
-    this.setState({showToolPanel: event.target.checked});
+    this.setState({showToolPanel: !event.target.checked});
   }
 
   onGridReady(params) {
@@ -125,13 +125,7 @@ export default class MyApp extends React.Component {
       <div>
         <div style={{float: 'right'}}>
           <input type="text" onChange={this.onQuickFilterText.bind(this)}
-               placeholder="Type text to filter..."/>
-          <button id="btDestroyGrid" disabled={!this.state.showGrid}
-              onClick={this.onShowGrid.bind(this, false)}>Destroy Grid
-          </button>
-          <button id="btCreateGrid" disabled={this.state.showGrid} onClick={this.onShowGrid.bind(this, true)}>
-            Create Grid
-          </button>
+               placeholder="Search"/>
         </div>
         <div style={{padding: '4px'}}>
           <b>Employees Details</b> <span id="rowCount"/>
@@ -142,35 +136,13 @@ export default class MyApp extends React.Component {
     // showing the bottom header and grid is optional, so we put in a switch
     if (this.state.showGrid) {
       bottomHeaderTemplate = (
-        <div>
-          <div style={{padding: 4}} className={'toolbar'}>
-            <span>
-              Grid API:
-              <button onClick={this.selectAll.bind(this)}>Select All</button>
-              <button onClick={this.deselectAll.bind(this)}>Clear Selection</button>
-            </span>
-            <span style={{marginLeft: 20}}>
-              Column API:
-              <button onClick={this.setCountryVisible.bind(this, false)}>Hide Country Column</button>
-              <button onClick={this.setCountryVisible.bind(this, true)}>Show Country Column</button>
-            </span>
-          </div>
-          <div style={{clear: 'both'}}></div>
-          <div style={{padding: 4}} className={'toolbar'}>
-            <span>
-            <label>
-              <input type="checkbox" onChange={this.onToggleToolPanel.bind(this)}/>
-              Show Tool Panel
-            </label>
-            <button onClick={this.onRefreshData.bind(this)}>Refresh Data</button>
-              </span>
-            <span style={{marginLeft: 20}}>
-              Filter API:
-              <button onClick={this.invokeSkillsFilterMethod.bind(this, false)}>Invoke Skills Filter Method</button>
-              <button onClick={this.dobFilter.bind(this)}>DOB equals to 01/01/2000</button>
-            </span>
-          </div>
-          <div style={{clear: 'both'}}></div>
+        <div style={{padding: '10px'}} >
+          <label>
+            <input type="checkbox" 
+              onChange={this.onToggleToolPanel.bind(this)}
+            />
+            Hide Tool Panel
+          </label>
         </div>
       );
       gridTemplate = (
@@ -197,20 +169,20 @@ export default class MyApp extends React.Component {
             rowData={this.state.rowData}
 
             // no binding, just providing hard coded strings for the properties
-            suppressRowClickSelection="true"
+            suppressRowClickSelection="false"
             rowSelection="multiple"
             enableColResize="true"
             enableSorting="true"
             enableFilter="true"
             groupHeaders="true"
-            rowHeight="22"
+            rowHeight="25"
           />
         </div>
       );
     }
 
     return <div style={{width: '100%'}}>
-      <div style={{padding: '4px'}}>
+      <div style={{padding: '10px'}}>
         {topHeaderTemplate}
         {bottomHeaderTemplate}
         {gridTemplate}
@@ -219,3 +191,36 @@ export default class MyApp extends React.Component {
   }
 
 }
+
+//  <button id="btDestroyGrid" disabled={!this.state.showGrid}
+//     onClick={this.onShowGrid.bind(this, false)}>Destroy Grid
+// </button>
+// <button id="btCreateGrid" disabled={this.state.showGrid} onClick={this.onShowGrid.bind(this, true)}>
+//   Create Grid
+// </button>
+
+// <div style={{padding: 4}} className={'toolbar'}>
+//   <span>
+//     Grid API:
+//     <button onClick={this.selectAll.bind(this)}>Select All</button>
+//     <button onClick={this.deselectAll.bind(this)}>Clear Selection</button>
+//   </span>
+//   <span style={{marginLeft: 20}}>
+//     Column API:
+//     <button onClick={this.setCountryVisible.bind(this, false)}>Hide Country Column</button>
+//     <button onClick={this.setCountryVisible.bind(this, true)}>Show Country Column</button>
+//   </span>
+// </div>
+// <div style={{clear: 'both'}}></div>
+// <div style={{padding: 4}} className={'toolbar'}>
+//   <span>
+  
+//   <button onClick={this.onRefreshData.bind(this)}>Refresh Data</button>
+//     </span>
+//   <span style={{marginLeft: 20}}>
+//     Filter API:
+//     <button onClick={this.invokeSkillsFilterMethod.bind(this, false)}>Invoke Skills Filter Method</button>
+//     <button onClick={this.dobFilter.bind(this)}>DOB equals to 01/01/2000</button>
+//   </span>
+// </div>
+// <div style={{clear: 'both'}}></div>
