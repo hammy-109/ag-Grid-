@@ -35,7 +35,7 @@ export default class ColDefFactory {
             }, columnGroupShow: 'open'
           }, {
             headerName: "Age", field: "age", width: 110, enableRowGroup: true, enablePivot: true, filter:'text',
-            pinned: true
+            pinned: true, columnGroupShow: 'open'
           }, {
             headerName: "Gender", field: "gender", width: 110, enableRowGroup: true, enablePivot: true, filter:'text',
             pinned: true
@@ -49,13 +49,17 @@ export default class ColDefFactory {
             // supply a React component
             cellRendererFramework: SkillsCellRenderer,
             // supply a React component
-            filterFramework: SkillsFilter
+            filterFramework: SkillsFilter,
+            filter: "text"
           },
           {headerName: "Proficiency", field: "proficiency", width: 135, enableValue: true,
             // supply a React component
             cellRendererFramework: ProficiencyCellRenderer,
             // supply a React component
             filterFramework: ProficiencyFilter
+          },
+          {headerName: "Designation", field: "designation", width: 135, enableValue: true,
+            filter: "text"
           }
         ]
       },
@@ -64,7 +68,7 @@ export default class ColDefFactory {
         headerGroupComponentFramework: MyReactHeaderGroupComponent,
         children: [
           {headerName: "Mobile", field: "mobile", width: 150, filter: 'text'},
-          {headerName: "Land-line", field: "landline", width: 150, filter: 'text', columnGroupShow: 'open'},
+          {headerName: "Land-line", field: "landline", width: 150, filter: 'text'},
           {headerName: "Address", field: "address", width: 500, filter: 'text', columnGroupShow: 'open'}
         ]
       }

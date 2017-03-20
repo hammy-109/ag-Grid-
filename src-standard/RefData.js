@@ -1,13 +1,11 @@
 export default class RefData {}
 
 RefData.FIRST_NAMES = [
-    "Noman ALi", "Murtaza", "Emily", "Olivia", "Lily", "Chloe", "Isabella",
-    "Amelia", "Jessica", "Sophia", "Ava", "Charlotte", "Mia", "Lucy", "Grace", "Ruby",
-    "Ella", "Evie", "Freya", "Isla", "Poppy", "Daisy", "Layla"
+    "Noman", "Murtaza", "Adeena", "Hammad", "Uzair", "Fahad", "Maha"
   ];
 
 RefData.LAST_NAMES = [
-    "Ali", "Zaidi", "Braxton", "Brennan", "Brock", "Bryson", "Cadwell",
+    "Ali", "Zaidi", "Arif", "Shakil", "ALam", "Azhar", "Fareed",
     "Cage", "Carson", "Chandler", "Cohen", "Cole", "Corbin", "Dallas", "Dalton", "Dane",
     "Donovan", "Easton", "Fisher", "Fletcher", "Grady", "Greyson", "Griffin"
   ];
@@ -16,9 +14,7 @@ RefData.AGE = [
     30, 24, 29, 30, 24, 29, 30, 24, 29, 30, 24, 29, 30, 24, 29, 30, 24, 29,30, 24, 29, 24, 30
   ];
 RefData.GENDER = [
-    " Male"," Male"," Male"," Female"," Male"," Female"," Male"," Female"," Male"," Female",
-    " Male"," Female"," Male"," Female"," Male"," Female"," Male"," Female"," Male"," Female",
-    " Male"," Female"," Male"
+    "Male","Male","Female","Male","Male","Male","Female"
   ];
 RefData.COUNTRY_CODES = {
     Ireland: "ie",
@@ -45,7 +41,11 @@ RefData.COUNTRY_CODES = {
     Uruguay: "uy",
     Venezuela: "ve"
   };
-
+RefData.DESIGNATION = [
+    "Senior Software Eng", "Software Eng", "Associate Software Eng",
+    "Senior Software Eng", "Software Eng", "Associate Software Eng",
+    "Senior Software Eng"
+];
 RefData.COUNTRIES = [
     {country: "Ireland", continent: "Europe", language: "English"},
     {country: "Spain", continent: "Europe", language: "Spanish"},
@@ -176,6 +176,6 @@ RefData.ADDRESSES = [
     '6770 Cinder Glen, Caronport, OH, 45053-5002, US, (440) 369-4018',
     '7619 Tawny Carrefour, Senlac, NV, 89529-9876, US, (775) 901-6433'];
 
-RefData.IT_SKILLS = ['android', 'css', 'html5', 'mac', 'windows'];
+RefData.IT_SKILLS = ['android', 'css', 'html5', 'mac', 'windows', 'javascript', 'react'];
 
-RefData.IT_SKILLS_NAMES = ['Android', 'CSS', 'HTML 5', 'Mac', 'Windows'];
+RefData.IT_SKILLS_NAMES = ['Android', 'CSS', 'HTML 5', 'Mac', 'Windows', 'JavaScript', 'React'];

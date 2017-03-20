@@ -14,8 +14,11 @@ export default class RowDataFactory {
           html5: Math.random() < 0.4,
           mac: Math.random() < 0.4,
           windows: Math.random() < 0.4,
-          css: Math.random() < 0.4
+          css: Math.random() < 0.4,
+          javascript: Math.random() < 0.4,
+          react: Math.random() < 0.4,
         },
+        designation: RefData.DESIGNATION[i],
         dob: RefData.DOB[i],
         address: RefData.ADDRESSES[i],
         years: Math.round(Math.random() * 100),

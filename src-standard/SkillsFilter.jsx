@@ -15,7 +15,9 @@ export default class SkillsFilter extends React.Component {
       css: false,
       html5: false,
       mac: false,
-      windows: false
+      windows: false,
+      javascript: false,
+      react: false
     };
   }
 
@@ -25,7 +27,9 @@ export default class SkillsFilter extends React.Component {
       css: this.state.css,
       html5: this.state.html5,
       mac: this.state.mac,
-      windows: this.state.windows
+      windows: this.state.windows,
+      javascript: this.state.javascript,
+      react: this.state.react
     }
   }
 
@@ -35,7 +39,9 @@ export default class SkillsFilter extends React.Component {
       css: model.css,
       html5: model.html5,
       mac: model.mac,
-      windows: model.windows
+      windows: model.windows,
+      javascript: modal.javascript,
+      react: modal.react
     });
   }
 
@@ -59,7 +65,7 @@ export default class SkillsFilter extends React.Component {
   // called by agGrid
   isFilterActive() {
     var somethingSelected = this.state.android || this.state.css ||
-      this.state.html5 || this.state.mac || this.state.windows;
+      this.state.html5 || this.state.mac || this.state.windows || this.state.javascript || this.state.react;
     return somethingSelected;
   };
 

@@ -124,11 +124,11 @@ export default class MyApp extends React.Component {
     topHeaderTemplate = (
       <div>
         <div style={{float: 'right'}}>
-          <input type="text" onChange={this.onQuickFilterText.bind(this)}
+          <input style={{padding: '7px', border: '1px solid black'}} type="text" onChange={this.onQuickFilterText.bind(this)}
                placeholder="Search"/>
         </div>
         <div style={{padding: '4px'}}>
-          <b>Employees Details</b> <span id="rowCount"/>
+          <h2><b>Employees Details</b></h2> <span id="rowCount"/>
         </div>
       </div>
     );
